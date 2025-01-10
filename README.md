@@ -53,6 +53,10 @@ The system runs daily to generate optimal DraftKings lineups through a sophistic
      - Enforces DraftKings' roster requirements
      - Maintains salary cap constraint ($50,000)
    - Outputs guaranteed optimal lineup selections
+   - Print results and save them in .csv files.
+
+4. **Betting**
+   - Go to DraftKings.com and place your bets!
 
 ## Project Structure 📁
 
