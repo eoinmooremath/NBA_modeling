@@ -48,11 +48,11 @@ The system runs daily to generate optimal DraftKings lineups through a sophistic
 
 3. **Lineup Optimization**
    - For each DraftKings contest:
-     - Mathematical optimization using PuLP
+     - Mathematical optimization using linear programming solver PuLP
      - Maximizes total projected fantasy points
      - Enforces DraftKings' roster requirements
      - Maintains salary cap constraint ($50,000)
-   - Outputs optimal lineup selections
+   - Outputs guaranteed optimal lineup selections
 
 ## Project Structure 📁
 
