@@ -21,6 +21,3 @@ pulp>=2.4
 
 # Development tools
 jupyter>=1.0.0
-black>=21.6b0
-flake8>=3.9.0
-pytest>=6.2.5
