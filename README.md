@@ -27,6 +27,8 @@ At the heart of the system is the SAINT (Self-Attention and Intersample Attentio
   - Column-wise self-attention identifies player archetypes and statistical correlations
 - Custom embedding pathways handle both categorical and continuous features
 - Advanced regularization techniques prevent overfitting
+- Original SAINT architecture introduced [here](https://github.com/somepago/saint?tab=readme-ov-file)
+
 
 ### Model Training 🎓
 The SAINT model is trained on a comprehensive dataset of over 60,000 NBA games spanning from 1946 to 2024. This extensive training enables the model to recognize complex patterns in player performance and team dynamics.
