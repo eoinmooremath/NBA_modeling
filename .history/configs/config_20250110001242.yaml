@@ -1,0 +1,42 @@
+# Data collection settings
+scraping:
+  block_length: 50
+  delay: 2.0  # Delay between requests
+
+# Default values for missing player data
+default_player_values:
+  height: 78  # inches
+  weight: 215  # pounds
+  age: 27
+  years_in_league: 7
+  draft_round: 2
+
+# Model parameters
+model:
+  dim: 64
+  depth: 8
+  num_heads: 16
+  head_dim: 64
+  dropout: 0.18
+  batch_size: 32
+  learning_rate: 0.001
+  num_players:6
+
+# DraftKings settings
+draftkings:
+  max_salary: 50000
+  roster_positions:
+    - PG
+    - SG
+    - SF
+    - PF
+    - C
+    - G
+    - F
+    - UTIL
+
+# File paths
+paths:
+  raw_data: "data/raw"
+  processed_data: "data/processed"
+  models: "models/saved"

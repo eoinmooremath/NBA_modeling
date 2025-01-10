@@ -1,0 +1,82 @@
+# Model Settings
+model:
+  # SAINT architecture parameters
+  saint:
+    dim: 64
+    depth: 8
+    num_heads: 16
+    head_dim: 64
+    output_dim: 7  # number of stats to predict
+    mlp_hidden_factors: [4, 3, 2]  # factors for hidden layer dimensions
+    continuous_embedding_type: "MLP"
+    # Training dropout rates
+    train_dropout:
+      attention: 0.18
+      ffn: 0.18
+      mlp: 0.18
+    # Inference dropout rates (always 0)
+    inference_dropout:
+      attention: 0.0
+      ffn: 0.0
+      mlp: 0.0
+    num_players: 12
+  num_players: 12
+
+  # Training parameters
+  training:
+    batch_stages:  # [batch_size, epochs] pairs
+      - [400, 5]
+      - [64, 5]
+      - [32, 5]
+    learning_rate:
+      initial: 0.001
+      minimum: 0.000001
+    weight_decay: 0.01
+    gradient_clip: 1.0
+    num_workers: 4
+    splits: [0.05, 0.05, 0.9]  # train/valid/test splits
+    num_epochs: 1
+
+# Prediction Settings
+prediction:
+  num_players_per_team: 6
+  recent_games_window: 6  # number of recent games to consider
+  min_minutes: 10  # minimum minutes played to consider a player
+  
+# DraftKings Settings
+draftkings:
+  max_salary: 50000
+  positions:  # Required roster positions
+    - "PG"
+    - "SG"
+    - "SF"
+    - "PF"
+    - "C"
+    - "G"
+    - "F"
+    - "UTIL"
+
+# Default values for missing player data
+default_player_values:
+  height: 78  # inches
+  weight: 215  # pounds
+  age: 27
+  years_in_league: 7
+  draft_round: 2
+
+# File paths
+paths:
+  data:
+    raw: "data/raw"
+    processed: "data/processed"
+    box_scores: "data/processed/box_scores.pkl"
+    player_info: "data/raw/common_player_info.csv"
+    game_data: "data/raw/game.csv"
+  
+  models:
+    checkpoints: "models/checkpoints"
+    best_model: "models/saved/best_model.pt"
+  
+  predictions:
+    output: "predictions/lineups"
+    logs: "logs/predictions"
