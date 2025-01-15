@@ -114,7 +114,7 @@ def get_draft_groups(target_dates=False):
             my_draft_groups.append(draft_group)
         if not draft_group.empty:
             if not draft_group['Salary'].eq(0).all():  # exclude drafts where players dont have a salary. These are different kinds of drafts we are not interested in.
-                my_draft_groups.append(draft_group)c
+                my_draft_groups.append(draft_group)
                 
             
     return my_draft_groups
